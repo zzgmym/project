@@ -1,0 +1,46 @@
+
+<form bindsubmit="formSubmit">
+<text>\n\n</text>
+<view class="itemView">账 号：
+ <input class="input" name="userName" placeholder="请输入账号"
+ bindinput="userNameInput"/>
+ </view>
+ <text>\n</text>
+<view class="itemView">密 码：
+ <input class="input" type='password' name="password" placeholder="请输入密码"
+ bindinput="PWDInput" />
+ </view>
+ <text>\n</text>
+<view class="viewName" style="background-color:#fbf9fe">
+ <button formType="submit">登录</button>
+</view>
+
+
+<view class="viewName" style="margin-top: 60px;">
+ <navigator url="../pages/menu/menu">
+ </navigator>
+</view>
+ <view class="order">
+
+
+    <block wx:for="{{src}}" wx:key="{{item.userName}}">
+
+      <view class="order-block">
+
+
+       <!--<navigator url="info.wxml"> 
+         
+          <image style="width:60rpx;height:60rpx;" src="{{item.img}}"></image>
+          <view style="font-size:28rpx;line-height:60rpx;">{{item.name}}</view>
+
+        </navigator>
+       -->
+
+
+      </view>
+
+     </block>
+
+
+     </view>  
+</form>
