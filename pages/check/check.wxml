@@ -1,0 +1,36 @@
+<form bindsubmit="checkok" >
+<view class="page"></view>
+<!-- 总数 -->
+<view class="li" bindtap='changeToggle'>
+<view class="left">待审核天数</view>
+<view class="right">{{listData.length}}</view>
+</view>
+
+<view wx:for="{{listData}}" wx:key="code" wx:for-item="outItem" wx:for-index="outIndex">
+<view class="li" data-index="{{outIndex}}" bindtap='changeToggle'>
+<view class="left">{{listData[outIndex][0].udate}}</view>
+<view class="right">{{listData[outIndex].length}} <text class="iconfont {{selectedFlag[0]?'icon-shangjiantou':'icon-xiala'}}"> </text>
+      </view>
+  </view>
+  <view hidden="{{!selectedFlag[outIndex]}}">
+  <checkbox-group bindchange="checkboxgroupBindchange">
+    <block wx:for="{{listData[outIndex]}}" wx:key="code" wx:for-item="item" wx:for-index="index">
+      <view class="li bg-gray"> 
+       
+<label class="checkbox" >
+<checkbox value="{{item.id}}"  checked="{{item.checked}}" />
+</label>
+
+        <view class='li bg-gray' style='font-size:10pt'>{{item.uname}}\n{{item.starttime}}\n{{item.endtime}}\n{{item.totaltime}}\n{{item.reason}}</view>
+      </view>
+    
+    </block>
+    </checkbox-group>
+  </view>
+</view>
+
+
+  <button form-type='submit'>审核通过</button>
+  <text>\n\n</text>
+  <button type='submit' bindtap='out'>导出数据</button>
+</form>

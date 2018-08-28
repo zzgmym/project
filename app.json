@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/login",
+    "pages/index/index",
+    "pages/info/info",
+    "pages/logs/logs",
+    "pages/history/history",
+    "pages/person/person",
+    "pages/person/update",
+    "pages/check/check",
+    "pages/check/check2",
+    "pages/history/reset",
+    "pages/check/out"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/info/info",
+        "text": "登记",
+        "iconPath": "images/dengji.png",
+        "selectedIconPath": "images/dengji2.png"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "text": "历史",
+        "iconPath": "images/history.png",
+        "selectedIconPath": "images/history2.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "个人",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user2.png"
+      },
+    {
+      "pagePath": "pages/check/check2",
+      "text": "审批",
+      "iconPath": "images/check.png",
+      "selectedIconPath": "images/check2.png"
+    }
+    ]
+  }
+ 
+}

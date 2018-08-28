@@ -1,0 +1,39 @@
+<!--pages/A-centrality/A-mySetting/A-password/A-password.wxml-->
+<view class='container'>
+  <form bindsubmit='formsub'>
+    <view class='top'>
+      <view class='one_list'>
+        <view class='change'>
+          <view class='pass'>旧密码：</view>
+          <view>
+            <input  name="oldPwd" placeholder="请输入旧密码" maxlength='20' value="{{text1}}"></input>
+          </view>
+        </view>
+        <view class='x' bindtap='delete1'>✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view class='password'>新密码：</view>
+          <view>
+            <input  name="newPwd" placeholder="请输入新密码" maxlength='20' value='{{text2}}'></input>
+          </view>
+        </view>
+        <view class='x' bindtap='delete2'>✖</view>
+      </view>
+      <view class='x_line'></view>
+      <view class='one_list'>
+        <view class='change'>
+          <view  class='password'>确认密码：</view>
+          <view>
+            <input  name="newPwd2" placeholder="请再次输入新密码" maxlength='20' value='{{text3}}'></input>
+          </view>
+        </view>
+        <view class='x' bindtap='delete3'>✖</view>
+      </view>
+    </view>
+
+   <button type='primary' form-type="submit" class='btn'>确定</button>
+
+  </form>
+</view>
