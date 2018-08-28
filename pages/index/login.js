@@ -14,30 +14,33 @@ Page({
     console.log("token====" + wx.getStorageSync('token'))
     console.log("正在发送token去验证")
     //发起网络请求
-    wx.request({
-      url:'http://localhost:8989/MavenTest1/login/autologin',
-      method: 'POST',
-      data: {
-        token: wx.getStorageSync('token') 
-      },
-      header: {
-        "Content-Type": "application/json"
-      },
-      success: function (res) {
-        console.log("result=" + res.data)
-        if (res.data == 1) {
-          console.log("登录成功！")
-          wx.switchTab({
-            url: '../info/info',
-          })
-        } else {
-          console.log("登录失败！")
-          wx.redirectTo({
-            url: '../index/index',
-          })
-        }
-      }
-    })
+      wx.switchTab({
+                   url: '../info/info',
+                 })
+    // wx.request({
+    //   url:'http://localhost:8989/MavenTest1/login/autologin',
+    //   method: 'POST',
+    //   data: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   header: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   success: function (res) {
+    //     console.log("result=" + res.data)
+    //     if (res.data == 1) {
+    //       console.log("登录成功！")
+    //       wx.switchTab({
+    //         url: '../info/info',
+    //       })
+    //     } else {
+    //       console.log("登录失败！")
+    //       wx.redirectTo({
+    //         url: '../index/index',
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   /**
