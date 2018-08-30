@@ -15,7 +15,7 @@ Page({
 
     if (oldPwd == '' || newPwd == '' || newPwd2 == '') {
       wx.showToast({
-        title: '密码不能为空',
+        title: '密码不能为空',//kong
         icon: 'none',
         duration: 1000
       })
