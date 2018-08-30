@@ -10,7 +10,11 @@
     "pages/check/check",
     "pages/check/check2",
     "pages/history/reset",
-    "pages/check/out"
+    "pages/check/out",
+    "pages/leave/leave",
+    "pages/overtime/overtime",
+    "pages/examination/examination",
+    "pages/waitfor/waitfor"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,7 +26,7 @@
     "list": [
       {
         "pagePath": "pages/info/info",
-        "text": "登记",
+        "text": "工作",
         "iconPath": "images/dengji.png",
         "selectedIconPath": "images/dengji2.png"
       },

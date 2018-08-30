@@ -1,0 +1,109 @@
+<view class="swiper-tab">
+ <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待我审批的</view>
+ <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我已审批的</view>
+
+</view>
+
+<swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">
+ <swiper-item>
+  <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+  <view class="overList">
+    <view class="overLeft">
+    <view class="overnames">
+    <text class="name">袁月</text>
+    </view>
+    <view class="overContent">
+    <text>袁月的加班 \n</text>
+    <text class="overtime">开始时间：2018-08-28\n</text>
+    <text class="overtime">结束时间：2018-08-29 \n</text>
+    <text class="overtimewite">待审批</text>
+    </view>
+    <view>
+      <text class="times">昨天</text>
+    </view>
+    </view>
+  </view>
+ <view class="overList">
+    <view class="overLeft">
+    <view class="overnames">
+    <text class="name">袁月</text>
+    </view>
+    <view class="overContent">
+    <text>袁月的加班 \n</text>
+    <text class="overtime">开始时间：2018-08-28\n</text>
+    <text class="overtime">结束时间：2018-08-29 \n</text>
+    <text class="overtimewite">待审批</text>
+    </view>
+    <view>
+      <text class="times">昨天</text>
+    </view>
+    </view>
+  </view>
+  <view class="overList">
+      <view class="overLeft">
+      <view class="overnames">
+      <text class="name">袁月</text>
+      </view>
+      <view class="overContent">
+      <text>袁月的加班 \n</text>
+      <text class="overtime">开始时间：2018-08-28\n</text>
+      <text class="overtime">结束时间：2018-08-29 \n</text>
+      <text class="overtimewite">待审批</text>
+      </view>
+      <view>
+        <text class="times">昨天</text>
+      </view>
+      </view>
+    </view>
+    <view class="overList">
+        <view class="overLeft">
+        <view class="overnames">
+        <text class="name">袁月</text>
+        </view>
+        <view class="overContent">
+        <text>袁月的加班 \n</text>
+        <text class="overtime">开始时间：2018-08-28\n</text>
+        <text class="overtime">结束时间：2018-08-29 \n</text>
+        <text class="overtimewite">待审批</text>
+        </view>
+        <view>
+          <text class="times">昨天</text>
+        </view>
+        </view>
+      </view>
+
+    <view class="overList">
+            <view class="overLeft">
+            <view class="overnames">
+            <text class="name">袁月</text>
+            </view>
+            <view class="overContent">
+            <text>袁月的加班 \n</text>
+            <text class="overtime">开始时间：2018-08-28\n</text>
+            <text class="overtime">结束时间：2018-08-29 \n</text>
+            <text class="overtimewite">待审批</text>
+            </view>
+            <view>
+              <text class="times">昨天</text>
+            </view>
+            </view>
+          </view>
+
+ </scroll-view>
+ </swiper-item>
+ <swiper-item>
+    <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+    <view class="noshenpi">
+       <view class="viewbox">
+       <image class="shenpitype" src="../../images/shenpi.png" ></image>
+       <view class="overtimess">
+       <text>
+        没有已审批申请
+       </text>
+
+        </view>
+       </view>
+    </view>
+   </scroll-view>
+ </swiper-item>
+</swiper>

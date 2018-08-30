@@ -1,0 +1,22 @@
+
+.leave{
+      height:100rpx;
+      width:100rpx;
+
+}
+
+.choose{
+      margin-top:30rpx;
+      height: 100%;
+      width:100%;
+      display:flex;
+      justify-content:space-around
+}
+.choosename{
+
+      font-size:24rpx;
+}
+.chooseview{
+      width:100rpx;
+      height:100rpx;
+}

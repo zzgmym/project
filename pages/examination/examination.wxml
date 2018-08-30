@@ -1,0 +1,17 @@
+<view>
+   <view class="choose">
+   <view class="chooseview">
+    <navigator url="../waitfor/waitfor">
+    <image class="leave" src="../../images/myexamination.png" ></image>
+    <text class="choosename">我审批的</text>
+    </navigator>
+    </view>
+     <view class="chooseview">
+     <navigator url="../leave/leave">
+    <image class="leave" src="../../images/myLaunch.png" ></image>
+    <text class="choosename">我发起的</text>
+    </navigator>
+     </view>
+   </view>
+
+</view>

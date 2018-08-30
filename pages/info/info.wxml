@@ -1,48 +1,31 @@
-<form bindsubmit="formSubmit" >
-<text>\n\n</text>
- <view>
-  <picker 
-          name="date1"
-          mode="date"
-          value='{{selectedProduceDate}}'
-          start='{{startProduceDate}}'
-          end='{{endProduceDate}}'
-          filed='day'
-          bindchange='dateChange'>
-      <view>选择日期：{{selectedProduceDate}}</view>
-  </picker>
- </view>
- <text>\n</text>
 <view>
-  <picker 
-          name="time1"
-          mode="time"
-          value='{{selectedTime}}'
-          start='{{startTime}}'
-          nd='{{endTime}}'
-          filed='day'
-          bindchange='timeChange'>
-      <view>选择开始时间：{{selectedTime}}</view>
-  </picker>
- </view>
- <text>\n</text>
- <view>
-  <picker 
-          name="time2"
-          mode="time"
-          value='{{selectedTime2}}'
-          start='{{startTime}}'
-          nd='{{endTime}}'
-          filed='day'
-          bindchange='endtimeChange'>
-      <view>选择结束时间：{{selectedTime2}}</view>
-  </picker>
- </view>
- <text>\n</text>
- <view class='reasonView'>加班原因：  
- <textarea class='text' name="reason" bindinput='reasonInput' value='{{text1}}'></textarea>
- </view>
-<view class="viewName" style="background-color:#fbf9fe">
- <button formType="submit">提交</button>
+
+   <view class="guanli">
+      技术开发部
+   </view>
+   <view class="guanlis">
+      管理
+   </view>
+   <view class="choose">
+   <view class="chooseview">
+    <navigator url="../examination/examination">
+    <image class="leave" src="../../images/Examination.png" ></image>
+    <text class="choosename">审批</text>
+     </navigator>
+    </view>
+     <view class="chooseview">
+     <navigator url="../leave/leave">
+    <image class="leave" src="../../images/leave.png" ></image>
+    <text class="choosename">请假</text>
+    </navigator>
+     </view>
+
+      <view class="chooseview">
+      <navigator url="../overtime/overtime">
+    <image class="leave" src="../../images/overtime.png" ></image>
+     <text class="choosename">加班</text>
+      </navigator>
+     </view>
+   </view>
+
 </view>
-</form>

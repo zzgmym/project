@@ -1,0 +1,50 @@
+<form bindsubmit="formSubmit" >
+<text>\n\n</text>
+ <view>
+  <picker
+          name="date1"
+          mode="date"
+          value='{{selectedProduceDate}}'
+          start='{{startProduceDate}}'
+          end='{{endProduceDate}}'
+          filed='day'
+          bindchange='dateChange'>
+      <view>选择日期：{{selectedProduceDate}}</view>
+  </picker>
+ </view>
+ <text>\n</text>
+<view>
+  <picker
+          name="time1"
+          mode="time"
+          value='{{selectedTime}}'
+          start='{{startTime}}'
+          nd='{{endTime}}'
+          filed='day'
+          bindchange='timeChange'>
+      <view>选择开始时间：{{selectedTime}}</view>
+  </picker>
+ </view>
+ <text>\n</text>
+ <view>
+  <picker
+          name="time2"
+          mode="time"
+          value='{{selectedTime2}}'
+          start='{{startTime}}'
+          nd='{{endTime}}'
+          filed='day'
+          bindchange='endtimeChange'>
+      <view>选择结束时间：{{selectedTime2}}</view>
+  </picker>
+ </view>
+ <text>\n</text>
+ <view class='reasonView'>加班原因：
+ <textarea class='text' name="reason" bindinput='reasonInput' value='{{text1}}'></textarea>
+ </view>
+<view class="viewName" style="background-color:#fbf9fe">
+ <button formType="submit">提交</button>
+</view>
+
+</form>
+

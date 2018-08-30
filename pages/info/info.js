@@ -16,9 +16,11 @@ Page({
     startTime: '00:00',
     endTime: '23:59',
   },
+
   timeChange: function (e) {
     this.setData({
       selectedTime: e.detail.value
+
     })
   },
   endtimeChange: function (e) {
