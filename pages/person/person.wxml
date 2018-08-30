@@ -1,0 +1,30 @@
+<!--user.wxml-->
+
+<view class="container">
+  <view class="user_base_info">
+    <view class="user_avatar">
+     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    </view>
+    <view class="user_info">
+      <text>
+        姓名：{{uname}}
+        部门：{{dept}}
+      </text>
+    </view>
+  </view>
+
+ <view class="user_addr_manage">
+    <view><text>\n\n\n</text></view>
+    <navigator url="../person/update" >修改密码</navigator>
+ </view>
+  
+  <view class="user_addr_manage">
+ <view><text>\n\n\n</text></view>
+  <button bindtap="clear">退出登录</button>
+ </view>
+
+</view>

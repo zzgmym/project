@@ -1,0 +1,17 @@
+<view class='li'>
+<form bindsubmit="fileout">
+<view wx:for="{{listData}}" wx:key="code" wx:for-item="item" wx:for-index="outIndex">
+
+<view class="li" data-index="{{outIndex}}" >
+<checkbox-group bindchange="checkboxgroupBindchange">     
+<label class="checkbox" >
+<checkbox value="{{item.date}}"  checked="{{item.checked}}" />
+</label>
+       <view class="left">{{listData[outIndex].date}}</view>
+       <view class="right">{{listData[outIndex].count}}</view>
+    </checkbox-group>
+    </view>
+    </view>
+<button form-type='submit'>导出数据</button>
+</form>
+</view>

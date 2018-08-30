@@ -1,0 +1,31 @@
+<view>
+
+   <view class="guanli">
+      技术开发部
+   </view>
+   <view class="guanlis">
+      管理
+   </view>
+   <view class="choose">
+   <view class="chooseview">
+    <navigator url="../examination/examination">
+    <image class="leave" src="../../images/Examination.png" ></image>
+    <text class="choosename">审批</text>
+     </navigator>
+    </view>
+     <view class="chooseview">
+     <navigator url="../leave/leave">
+    <image class="leave" src="../../images/leave.png" ></image>
+    <text class="choosename">请假</text>
+    </navigator>
+     </view>
+
+      <view class="chooseview">
+      <navigator url="../overtime/overtime">
+    <image class="leave" src="../../images/overtime.png" ></image>
+     <text class="choosename">加班</text>
+      </navigator>
+     </view>
+   </view>
+
+</view>

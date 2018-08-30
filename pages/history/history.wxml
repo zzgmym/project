@@ -1,0 +1,22 @@
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">日期</view>
+    <view class="th">时间(小时)</view>
+    <view class="th ">结果</view>
+    <view class='th'>修改</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.udate}}</view>
+      <view class="td">{{item.totaltime}}</view>
+      <view class="td">{{item.status}}</view>
+      <view class="td" bindtap='reset' data-testid='{{index}}'data-listdata="{{listData}}"><button size='{{mini}}'>修改</button></view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.udate}}</view>
+      <view class="td">{{item.totaltime}}</view>
+      <view class="td">{{item.status}}</view>
+      <view class="td" bindtap='reset' data-testid='{{index}}'data-listdata="{{listData}}"><button size='{{mini}}'>修改</button></view>
+    </view>
+  </block>
+</view>
