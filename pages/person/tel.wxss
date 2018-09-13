@@ -1,0 +1,27 @@
+page {
+  background-color: #eee;
+  font-size: 32rpx;
+}
+.li1{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #0db4f7;
+  margin: 10rpx;
+  background-color: #fff;
+}
+.btn{
+  width: 90%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  margin-top: 40rpx;
+  background: linear-gradient(to right, #22a0ff, #007ce7);
+  border-radius: 15rpx;
+  box-shadow: 0 5rpx 5rpx #8ccaf6;
+}

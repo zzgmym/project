@@ -1,1 +1,30 @@
 /* pages/check/out.wxss */
+
+.li1{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    line-height: 100rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+}
+.title{
+    width: 100%;
+    border-bottom: 5rpx solid #8ccaf6;
+    font-size: 28;
+}
+.btn{
+  
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color: #fff;
+    margin-top: 40rpx;
+    background: linear-gradient(to right, #22a0ff, #007ce7);
+    border-radius: 15rpx;
+    box-shadow: 0 5rpx 5rpx #8ccaf6;
+    position: fixed;
+    bottom: 20rpx;
+    left: 20rpx;
+    right: 20rpx;
+}

@@ -1,46 +1,36 @@
+<view class='container'>
+ <form bindsubmit="formSubmit">
+  <text>\n\n</text>
+  <view class='top'>
+   <view class="U1">
+   <text class='zhanghao'>账 号：</text>
+    <input class="input" name="userName" placeholder="请输入账号"
+           bindinput="userNameInput"/>
+    <text decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <image src='./user.png' class='icon' style="width:25px; height: 25px"></image>
+   </view>
 
-<form bindsubmit="formSubmit">
-<text>\n\n</text>
-<view class="itemView">账 号：
- <input class="input" name="userName" placeholder="请输入账号"
- bindinput="userNameInput"/>
- </view>
- <text>\n</text>
-<view class="itemView">密 码：
- <input class="input" type='password' name="password" placeholder="请输入密码"
- bindinput="PWDInput" />
- </view>
- <text>\n</text>
-<view class="viewName" style="background-color:#fbf9fe">
- <button formType="submit">登录</button>
+   <view class="P1">
+   <text class='zhanghao'>密 码：</text>
+    <input class="input" type='password' name="password" placeholder="请输入密码"
+           bindinput="PWDInput" />
+    <text decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <image src='./pwd.png' class='icon' style="width:25px; height: 25px"></image>
+   </view>
+  </view>
+  <text>\n\n\n\n</text>
+  <button formType="submit" class='L1'>登录</button>
+
+
+  <view class="viewName" style="margin-top: 60px;">
+   <navigator url="../pages/menu/menu">
+   </navigator>
+  </view>
+  <view class="order">
+   <block wx:for="{{src}}" wx:key="{{item.userName}}">
+    <view class="order-block">
+    </view>
+   </block>
+  </view>
+ </form>
 </view>
-
-
-<view class="viewName" style="margin-top: 60px;">
- <navigator url="../pages/menu/menu">
- </navigator>
-</view>
- <view class="order">
-
-
-    <block wx:for="{{src}}" wx:key="{{item.userName}}">
-
-      <view class="order-block">
-
-
-       <!--<navigator url="info.wxml"> 
-         
-          <image style="width:60rpx;height:60rpx;" src="{{item.img}}"></image>
-          <view style="font-size:28rpx;line-height:60rpx;">{{item.name}}</view>
-
-        </navigator>
-       -->
-
-
-      </view>
-
-     </block>
-
-
-     </view>  
-</form>

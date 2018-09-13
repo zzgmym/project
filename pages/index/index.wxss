@@ -1,21 +1,58 @@
-/**index.wxss**/
-.userinfo {
+page {
+  background-color: #eee;
+  font-size: 38rpx;
+}
+.container {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.top {
+  width: 100%;
+  height: 300rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-shadow: 0 5rp 5rp #e9e9e9;
+}
+
+.U1{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 150rpx;
+  line-height: 90rpx;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.zhanghao{
+  width: 30%;
+}
+.P1{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  height: 150rpx;
+  line-height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+input {
+  width: 60%;
+  font-size: 30rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.L1{
+  width: 100%;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  margin-top: 40rpx;
+  background: linear-gradient(to right, #22a0ff, #007ce7);
+  border-radius: 15rpx;
+  box-shadow: 0 5rpx 5rpx #8ccaf6;
+}
+.icon{
+  position: relative;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}

@@ -1,0 +1,146 @@
+/* pages/leave/leave.wxss */
+
+.iconfont{
+  width: 40px;
+  height: 40px;
+  font-size:40px;
+  float: left;
+}
+.icon{
+  width: 40px;
+  height: 40px;
+  font-size:40px;
+}
+.section{
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding:5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.li1 {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding:5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.li2 {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding:5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.li3 {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding: 5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom:1rpx solid #f1f1f1;
+}
+.li4{
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding: 5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.li4-1{
+  background-color: #fff;
+  border-bottom:18rpx solid #f1f1f1;
+}
+.li5 {
+  display: flex;
+  justify-content: flex-start;
+
+}
+.li6{
+  background-color: #fff;
+  border-bottom:18rpx solid #f1f1f1;
+  font-size: 20rpx #f1f1f1;
+}
+.li7{
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 34rpx;
+  width: 100%;
+  padding:5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.li8{
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  font-size: 34rpx;
+  width: 100%;
+  padding:5px 5px;
+  height: 130rpx;
+  line-height: 100rpx;
+  border-bottom: 18rpx solid #f1f1f1;
+}
+.li9{
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  padding: 5px 5px;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom:1rpx solid #f1f1f1;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.upimage{
+  position: relative;
+}
+.del{
+  position: absolute;
+  left: 30px;
+  top: -15px;
+}
+.names{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:80rpx;
+  height:80rpx;
+  border-radius:50%;
+  background-color:#007AFF;
+  margin-right:20rpx;
+  font-size:12px;
+  color:white;
+}
+.day{
+  width: 70px;
+  font-size: 17px
+}
+
+

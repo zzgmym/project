@@ -7,7 +7,7 @@
     </navigator>
     </view>
      <view class="chooseview">
-     <navigator url="../leave/leave">
+     <navigator url="../launch/launch">
     <image class="leave" src="../../images/myLaunch.png" ></image>
     <text class="choosename">我发起的</text>
     </navigator>

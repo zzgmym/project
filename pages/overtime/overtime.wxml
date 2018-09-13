@@ -1,50 +1,63 @@
+<!--添加加班信息页面-->
 <form bindsubmit="formSubmit" >
-<text>\n\n</text>
- <view>
-  <picker
-          name="date1"
-          mode="date"
-          value='{{selectedProduceDate}}'
-          start='{{startProduceDate}}'
-          end='{{endProduceDate}}'
-          filed='day'
-          bindchange='dateChange'>
-      <view>选择日期：{{selectedProduceDate}}</view>
-  </picker>
- </view>
- <text>\n</text>
-<view>
-  <picker
-          name="time1"
-          mode="time"
-          value='{{selectedTime}}'
-          start='{{startTime}}'
-          nd='{{endTime}}'
-          filed='day'
-          bindchange='timeChange'>
-      <view>选择开始时间：{{selectedTime}}</view>
-  </picker>
- </view>
- <text>\n</text>
- <view>
-  <picker
-          name="time2"
-          mode="time"
-          value='{{selectedTime2}}'
-          start='{{startTime}}'
-          nd='{{endTime}}'
-          filed='day'
-          bindchange='endtimeChange'>
-      <view>选择结束时间：{{selectedTime2}}</view>
-  </picker>
- </view>
- <text>\n</text>
- <view class='reasonView'>加班原因：
- <textarea class='text' name="reason" bindinput='reasonInput' value='{{text1}}'></textarea>
- </view>
-<view class="viewName" style="background-color:#fbf9fe">
- <button formType="submit">提交</button>
-</view>
+    <view class='li1'>
+        <view style='color:red'>*</view>
+        <picker
+                name="date1"
+                mode="date"
+                value='{{selectedProduceDate}}'
+                start='{{startProduceDate}}'
+                end='{{endProduceDate}}'
+                filed='day'
+                bindchange='dateChange'>
+            <view>选择日期：{{selectedProduceDate}}</view>
+        </picker>
+    </view>
 
+    <view class='li2'>
+        <view style='color:red'>*</view>
+        <picker
+                name="time1"
+                mode="time"
+                value='{{selectedTime}}'
+                start='{{startTime}}'
+                end='{{endTime}}'
+                filed='day'
+                bindchange='timeChange'>
+            <view>选择开始时间：{{selectedTime}}</view>
+        </picker>
+    </view>
+
+    <view class='li3'>
+        <view style='color:red'>*</view>
+        <picker
+                name="time2"
+                mode="time"
+                value='{{selectedTime2}}'
+                start='{{startTime}}'
+                nd='{{endTime}}'
+                filed='day'
+                bindchange='endtimeChange'>
+            <view>选择结束时间：{{selectedTime2}}</view>
+        </picker>
+    </view>
+
+    <view class='li6'>
+        <text></text>
+    </view>
+    <view class='li4'>加班原因：
+        <textarea class='text' name="reason" bindinput='reasonInput' value='{{text1}}' placeholder='请填写加班原因'></textarea>
+    </view>
+    <text>\n</text>
+    <!--js从缓存中拿nnname的值，如果非空，则显示nnname值，如果为空，则显示加号-->
+    <view class='li5'>
+        <view style='color:red'>*</view>
+        审批人：
+    </view>
+    <view wx:if='{{contect==""}}' class='icon' bindtap='addcontect'><image class='iconfont' src='./add.png'></image></view>
+    <view wx:else class='names' bindtap='addcontect'>{{contect}}</view>
+    <text>\n\n</text>
+    <view class="viewName">
+        <button formType="submit" class='btn' style="color:white;background-color:#6699FF">提交</button>
+    </view>
 </form>
-

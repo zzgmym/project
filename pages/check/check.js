@@ -23,7 +23,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8989/MavenTest1/list/listByDate',
+      url: 'http://192.168.13.139:8989/MavenTest1/list/listByDate',
       data: {
         dept:wx.getStorageSync("dept")
       },
@@ -35,9 +35,9 @@ Page({
         // console.log(res.data)
         that.setData({
           listData: res.data
+
         })
-        // for(var i=0;i<res.data.length;i++){
-        // console.log(that.data.listData);
+
       }
     })
 
@@ -56,7 +56,7 @@ Page({
   checkok: function (e) {
     var data = this.data.selectedData.join(',');
     wx.request({
-      url: 'http://localhost:8989/MavenTest1/list/editStatus',
+      url: 'http://192.168.13.139:8989/MavenTest1/list/passByIds',
       data: {temp1: data},
       method: 'POST',
       header: {

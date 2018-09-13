@@ -19,7 +19,6 @@
     <text class="choosename">请假</text>
     </navigator>
      </view>
-
       <view class="chooseview">
       <navigator url="../overtime/overtime">
     <image class="leave" src="../../images/overtime.png" ></image>

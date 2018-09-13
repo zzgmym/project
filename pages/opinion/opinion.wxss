@@ -1,0 +1,25 @@
+.box-row{
+    width: 100%;
+    height: 1005;
+    background-color:#ffffff;
+}
+
+.textname {
+    margin-left: 20rpx;
+}
+
+.tijiao{
+    position: fixed;
+    bottom: 20rpx;
+    left: 20rpx;
+    right: 20rpx;
+    height: 100rpx;
+    background-color: #22a0ff;
+    text-align: center;
+    color: white;
+    line-height: 100rpx;
+
+}
+.queren{
+
+}

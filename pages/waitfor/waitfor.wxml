@@ -1,109 +1,93 @@
+
 <view class="swiper-tab">
- <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待我审批的</view>
- <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我已审批的</view>
+    <view class="tab-item {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待我审批的</view>
+    <view class="tab-item {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我已审批的</view>
 
 </view>
 
 <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">
- <swiper-item>
-  <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
-  <view class="overList">
-    <view class="overLeft">
-    <view class="overnames">
-    <text class="name">袁月</text>
-    </view>
-    <view class="overContent">
-    <text>袁月的加班 \n</text>
-    <text class="overtime">开始时间：2018-08-28\n</text>
-    <text class="overtime">结束时间：2018-08-29 \n</text>
-    <text class="overtimewite">待审批</text>
-    </view>
-    <view>
-      <text class="times">昨天</text>
-    </view>
-    </view>
-  </view>
- <view class="overList">
-    <view class="overLeft">
-    <view class="overnames">
-    <text class="name">袁月</text>
-    </view>
-    <view class="overContent">
-    <text>袁月的加班 \n</text>
-    <text class="overtime">开始时间：2018-08-28\n</text>
-    <text class="overtime">结束时间：2018-08-29 \n</text>
-    <text class="overtimewite">待审批</text>
-    </view>
-    <view>
-      <text class="times">昨天</text>
-    </view>
-    </view>
-  </view>
-  <view class="overList">
-      <view class="overLeft">
-      <view class="overnames">
-      <text class="name">袁月</text>
-      </view>
-      <view class="overContent">
-      <text>袁月的加班 \n</text>
-      <text class="overtime">开始时间：2018-08-28\n</text>
-      <text class="overtime">结束时间：2018-08-29 \n</text>
-      <text class="overtimewite">待审批</text>
-      </view>
-      <view>
-        <text class="times">昨天</text>
-      </view>
-      </view>
-    </view>
-    <view class="overList">
-        <view class="overLeft">
-        <view class="overnames">
-        <text class="name">袁月</text>
-        </view>
-        <view class="overContent">
-        <text>袁月的加班 \n</text>
-        <text class="overtime">开始时间：2018-08-28\n</text>
-        <text class="overtime">结束时间：2018-08-29 \n</text>
-        <text class="overtimewite">待审批</text>
-        </view>
-        <view>
-          <text class="times">昨天</text>
-        </view>
-        </view>
-      </view>
+    <swiper-item>
+        <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+            <view catchtap="gotoresult"  id="{{item.id}}" class="overList" wx:for="{{listData}}" wx:key="{{code}}">
+                <view class="overLeft">
+                    <view class="overnames">
+                        <text   class="name">{{item.uname}}</text>
+                    </view>
+                    <view class="overContent">
+                        <view wx:if="{{item.enddate != 'enddate'}}">
+                            <view class="qingjia">
+                            <text>{{item.uname}}的请假\n</text>
+                            <text class="overtime">请假类型 ：{{item.utype}}\n</text>
+                            <text class="overtime">开始日期：{{item.startdate}}\n</text>
+                            <text class="overtime">结束日期：{{item.enddate}}\n</text>
+                            <text class="overtime">开始时间：{{item.starttime}}\n</text>
+                            <text class="overtime">结束时间：{{item.endtime}} \n</text>
+                            <text class="overtimewite">{{item.status}}</text>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <view class="qingjia">
+                            <text>{{item.uname}}的加班 \n</text>
+                            <text class="overtime">开始日期：{{item.udate}}\n</text>
+                            <text class="overtime">开始时间：{{item.starttime}}\n</text>
+                            <text class="overtime">结束时间：{{item.endtime}} \n</text>
+                            <text class="overtimewite">{{item.status}}</text>
+                            </view>
+                        </view>
 
-    <view class="overList">
-            <view class="overLeft">
-            <view class="overnames">
-            <text class="name">袁月</text>
+                    </view>
+                    <view class="nana">
+                        <text class="times">{{item.submittime}}</text>
+                    </view>
+                </view>
             </view>
-            <view class="overContent">
-            <text>袁月的加班 \n</text>
-            <text class="overtime">开始时间：2018-08-28\n</text>
-            <text class="overtime">结束时间：2018-08-29 \n</text>
-            <text class="overtimewite">待审批</text>
+        </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+            <navigator url="../details/details">
+            <view catchtap="gotore" id="{{item.id}}" class="overList" wx:for="{{allData}}" wx:key="{{code}}">
+                <view class="overLeft">
+                    <view class="overnames">
+                        <text   class="name">{{item.uname}}</text>
+                    </view>
+                    <view class="overContent">
+                        <view wx:if="{{item.enddate != 'enddate'}}">
+                            <view class="qingjia">
+                                <text>{{item.uname}}的请假\n</text>
+                                <text class="overtime">请假类型 ：{{item.utype}}\n</text>
+                                <text class="overtime">开始时间：{{item.startdate}}-{{item.starttime}}\n</text>
+                                <text class="overtime">结束时间：{{item.enddate}}-{{item.endtime}} \n</text>
+                                <text class="overtimewite">{{item.status}}</text>
+                            </view>
+                        </view>
+                        <view wx:else>
+                            <view class="qingjia">
+                                <text>{{item.uname}}的加班 \n</text>
+                                <text class="overtime">加班日期：{{item.udate}}\n</text>
+                                <text class="overtime">开始时间：{{item.starttime}}\n</text>
+                                <text class="overtime">结束时间：{{item.endtime}} \n</text>
+                                <text class="overtimewite">{{item.status}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view>
+                        <text class="times">{{item.submittime}}</text>
+                    </view>
+                </view>
             </view>
-            <view>
-              <text class="times">昨天</text>
-            </view>
-            </view>
-          </view>
-
- </scroll-view>
- </swiper-item>
- <swiper-item>
-    <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
-    <view class="noshenpi">
-       <view class="viewbox">
-       <image class="shenpitype" src="../../images/shenpi.png" ></image>
-       <view class="overtimess">
-       <text>
-        没有已审批申请
-       </text>
-
-        </view>
-       </view>
-    </view>
-   </scroll-view>
- </swiper-item>
+             </navigator>
+        </scroll-view>
+    </swiper-item>
 </swiper>
+<!--<view class="noshenpi">-->
+<!--<view class="viewbox">-->
+<!--<image class="shenpitype" src="../../images/shenpi.png" ></image>-->
+<!--<view class="overtimess">-->
+<!--<text>-->
+<!--没有已审批申请-->
+<!--</text>-->
+
+<!--</view>-->
+<!--</view>-->
+<!--</view>-->

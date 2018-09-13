@@ -1,0 +1,12 @@
+<view class="MailList-box">
+    <view class="MailList-text">
+        <text>联系人</text>
+    </view>
+    <view class="overnames-box"  wx:for="{{listData}}" wx:key="{{code}}">
+      <view  class="overnames">
+          <text class="name">{{item.uname}}</text>
+      </view>
+      <view catchtap="gotoresult" id="{{item.id}}" data-uname="{{item.uname}}" class="name-font">{{item.uname}}</view>
+    </view>
+
+</view>

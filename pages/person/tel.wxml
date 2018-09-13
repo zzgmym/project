@@ -1,0 +1,10 @@
+<form bindsubmit='updateTel'>
+<text>\n\n</text>
+  <view class='li1'>
+  <input type='number' name='tel' value='{{telNum}}'></input>
+  <text decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  <image src='./update.png' style="width:25px; height: 25px"></image>
+  </view>
+  <text>\n</text>
+  <button form-type='submit' class='btn'>提交</button>
+</form>

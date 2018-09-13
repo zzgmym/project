@@ -10,6 +10,12 @@
  flex-direction: row;
  justify-content: center;
 }
+.qingjia{
+   display: flex;
+ flex-direction: column;
+ width:60%;
+ height:240rpx;
+}
 .tab-item{
  flex: 1;
  font-size: 30rpx;
@@ -26,7 +32,7 @@
  padding:20rpx;
  width:100%;
  height:200rpx;
- border-top:1px solid #ccc;
+ border-bottom:1px solid #ccc;
 }
 .overnames{
  display:flex;
@@ -42,8 +48,9 @@
  display:flex;
 }
 .overContent{
- width:78%;
- height:160rpx;
+
+ width:60%;
+ height:240rpx;
 }
 .overtime{
  color:#ccc;
@@ -57,14 +64,19 @@
  font-size:18rpx;
  color:white;
 }
+.nana{
+  width: 30%;
+ 
+}
 .times{
+ text-align: right;
  font-size:20rpx;
  color:grey;
 
 }
 .scroll-view-y {
- height: 100%;
- width: 100%;
+  height: 100%;
+ width: 100%; 
 }
 .noshenpi{
  width:100%;

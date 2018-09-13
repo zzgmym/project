@@ -29,7 +29,7 @@ Page({
       })
     } else {
       wx.request({
-        url: "http://192.168.13.27:8989/MavenTest1/login/editpassword",
+        url: "http://192.168.13.139:8989/MavenTest1/login/editpassword",
         method: 'POST',
         data: {
           userid:wx.getStorageSync("userid"),

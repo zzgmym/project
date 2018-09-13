@@ -14,13 +14,11 @@ Page({
         endTime: '23:59',
         selectedTime2: '21:00',
         startTime: '00:00',
-        endTime: '23:59',
+        endTime: '23:59'
     },
-
     timeChange: function (e) {
         this.setData({
             selectedTime: e.detail.value
-
         })
     },
     endtimeChange: function (e) {
@@ -43,14 +41,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.showTabBar({
-            success: function (e) {
-                url: "../info/info"
-            }
-        })
-
         wx.setNavigationBarTitle({
             title: '加班登记'
+
         })
         var name = wx.getStorageSync('username')
         var dept = wx.getStorageSync('dept')
@@ -64,66 +57,43 @@ Page({
         });
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow: function () {
-
+        this.setData({
+            contect:wx.getStorageSync("con")
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
+    //添加审批人
+    addcontect: function (e) {
+        wx.navigateTo({
+            url: '../contect/contect',
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
     formSubmit: function (e) {
         var that = this;
-        if (e.detail.value.time2 > e.detail.value.time1) {
+        if (e.detail.value.time2 <= e.detail.value.time1) {
+            wx.showToast({
+                title: '时间选择有误，请重新选择',
+                icon: 'none',
+                duration: 2000
+            })
+        } else if(e.detail.value.contect==''){
+            wx.showToast({
+                title: '请选择审批人！',
+                icon:'none',
+                duration:2000
+            })
+        } else {
             wx.request({
-                url: 'http://localhost:8989/MavenTest1/list/add',
+                url: 'http://192.168.13.139:8989/MavenTest1/list/add',
                 method: 'POST',
                 data: {
                     reason: e.detail.value.reason,
                     date1: e.detail.value.date1,
                     time1: e.detail.value.time1,
                     time2: e.detail.value.time2,
+                    auditors: wx.getStorageSync('contect'),
                     name: wx.getStorageSync('username'),
                     dept: wx.getStorageSync('dept')
                 },
@@ -131,18 +101,12 @@ Page({
                     "Content-Type": "application/json; charset=utf8"
                 },
                 success: function (res) {
-                    // console.log("x=" + res.data)
-                    if (res.data!= '-1') {
+                    if (res.data.status != '-1') {
                         wx.showToast({
-                            title: res.data=='1'? '提交成功' : '提交失败',
+                            title: res.data.status == '1' ? '提交成功' : '提交失败',
                             icon: 'none',
                             duration: 2000,
                             success: function () {
-                                setTimeout(function () {
-                                    wx.switchTab({
-                                        url: '../history/history',
-                                    })
-                                }, 2000)
                             }
                         })
                     } else {
@@ -154,13 +118,6 @@ Page({
                     }
                 }
             })
-
-        } else {
-            wx.showToast({
-                title: '时间选择有误，请重新选择',
-                icon: 'none',
-                duration: 2000
-            })
         }
     },
     orderMeeting: function () { //提交input信息到后台
@@ -171,7 +128,5 @@ Page({
         var reason = this.data.reason;
         console.log(reason)
         var self = this;
-
-
     }
 })

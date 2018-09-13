@@ -1,0 +1,29 @@
+<view class='page_row' bindtap="search">
+  <view class="search">
+    <view class="df search_arr">
+      <icon class="searchcion" size='18' type='search'></icon>
+      <input class="disabled" placeholder="搜索" value="{{searchValue}}"/>
+    </view>
+  </view>
+  <view class='sousuo' style='font-size:18px'>搜索</view>
+</view>
+
+<view>\n</view>
+<view class='lxr' style='color:grey;font-size:18px'>联系人</view>
+
+<checkbox-group bindchange="checkboxgroupBindchange" bindtap='check'>
+  <view class="overList" wx:for='{{listData}}' wx:key='{{code}}'>
+    <label class="checkbox">
+      <view class="overLeft">
+        <view class="overnames">
+          <checkbox value="{{item}}"  checked="{{item.checked}}"  hidden='checkbox'/>
+          <text class="name" >{{listname[index]}}</text>
+        </view>
+        <text class='name2'>{{item}}</text>
+      </view>
+    </label>
+  </view>
+</checkbox-group>
+
+  
+

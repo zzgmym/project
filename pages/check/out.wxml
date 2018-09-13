@@ -1,17 +1,16 @@
-<view class='li'>
+<text>\n</text>
+<view class='title' style='color:grey'>请按日期选择员工加班表</view>
 <form bindsubmit="fileout">
-<view wx:for="{{listData}}" wx:key="code" wx:for-item="item" wx:for-index="outIndex">
-
-<view class="li" data-index="{{outIndex}}" >
-<checkbox-group bindchange="checkboxgroupBindchange">     
-<label class="checkbox" >
-<checkbox value="{{item.date}}"  checked="{{item.checked}}" />
-</label>
-       <view class="left">{{listData[outIndex].date}}</view>
-       <view class="right">{{listData[outIndex].count}}</view>
+    <checkbox-group bindchange="checkboxgroupBindchange">
+        <view class='li1' wx:for="{{listData}}" wx:key="code" wx:for-item="item" wx:for-index="outIndex">
+            <view>
+                <label class="checkbox" >
+                    <checkbox value="{{item.date}}" checked="{{item.checked}}"/>
+                </label>
+                {{listData[outIndex].date}}
+            </view>
+            <view> <text class='count' style='color:#aaa'>{{listData[outIndex].count}}</text></view>
+        </view>
     </checkbox-group>
-    </view>
-    </view>
-<button form-type='submit'>导出数据</button>
+    <button form-type='submit' class='btn'>导出数据</button>
 </form>
-</view>

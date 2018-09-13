@@ -1,0 +1,8 @@
+<form bindsubmit="formSubmit" >
+    <view class="box-row">
+           <textarea class="textname"   bindinput='reasonInput' value='{{text1}}' placeholder='请填写{{status}}理由'></textarea>
+    </view>
+    <button catchtap="gotore" id="{{listData.id}}" formType="submit" class="tijiao">
+            确认{{status}}
+    </button>
+</form>

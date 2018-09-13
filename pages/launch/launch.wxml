@@ -1,0 +1,33 @@
+<navigator url="../started/started">
+    <view catchtap="gotoresult" id="{{item.id}}" class="overList" wx:for="{{listData}}" wx:key="{{code}}">
+        <view class="overLeft">
+            <view class="overnames">
+                <text   class="name">{{item.uname}}</text>
+            </view>
+            <view class="overContent">
+                <view wx:if="{{item.enddate != 'enddate'}}">
+                    <view class="qingjia">
+                        <text>{{item.uname}}的请假\n</text>
+                        <text class="overtime">请假类型 ：{{item.utype}}\n</text>
+                        <text class="overtime">开始日期：{{item.startdate}}  {{item.starttime}}\n</text>
+                        <text class="overtime">结束日期：{{item.enddate}}  {{item.endtime}}\n</text>
+                        <text class="overtimewite">{{item.status}}</text>
+                    </view>
+                </view>
+                <view wx:else>
+                    <view class="qingjia">
+                        <text>{{item.uname}}的加班 \n</text>
+                        <text class="overtime">开始日期：{{item.udate}}\n</text>
+                        <text class="overtime">开始时间：{{item.starttime}}\n</text>
+                        <text class="overtime">结束时间：{{item.endtime}} \n</text>
+                        <text class="overtimewite">{{item.status}}</text>
+                    </view>
+                </view>
+
+            </view>
+            <view class="nana">
+                <text class="times">{{item.submittime}}</text>
+            </view>
+        </view>
+    </view>
+</navigator>
