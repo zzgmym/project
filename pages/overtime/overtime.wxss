@@ -52,9 +52,18 @@
   justify-content: flex-start;
 }
 .btn{
-position: fixed;
-bottom: 0;
-width: 100%;
+    height: 90rpx;
+    text-align: center;
+    line-height: 90rpx;
+    color: #fff;
+    margin-top: 40rpx;
+    background: linear-gradient(to right, #22a0ff, #007ce7);
+    border-radius: 15rpx;
+    box-shadow: 0 5rpx 5rpx #8ccaf6;
+    position: fixed;
+    bottom: 20rpx;
+    left: 20rpx;
+    right: 20rpx;
 }
 .names{
  display:flex;

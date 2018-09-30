@@ -1,3 +1,1 @@
-<!--pages/index/login.wxml-->
-<text>pages/index/login.wxml</text>
-
+<view><text>Loading...</text></view>

@@ -1,5 +1,5 @@
 <!--添加加班信息页面-->
-<form bindsubmit="formSubmit" >
+<form bindsubmit="formSubmit">
     <view class='li1'>
         <view style='color:red'>*</view>
         <picker
@@ -35,7 +35,7 @@
                 mode="time"
                 value='{{selectedTime2}}'
                 start='{{startTime}}'
-                nd='{{endTime}}'
+                end='{{endTime}}'
                 filed='day'
                 bindchange='endtimeChange'>
             <view>选择结束时间：{{selectedTime2}}</view>

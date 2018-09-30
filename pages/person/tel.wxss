@@ -11,8 +11,9 @@ page {
   justify-content: space-between;
   align-items: center;
   border: 1px solid #0db4f7;
-  margin: 10rpx;
+  margin: 40rpx;
   background-color: #fff;
+
 }
 .btn{
   width: 90%;

@@ -1,106 +1,87 @@
 <!--添加加班信息页面-->
-<form bindsubmit="formSubmit" >
-    <picker name='leavetype' bindchange="bindPickerChange" value="{{items[index]}}" range="{{items}}">
-        <view class="section">
-            <view style='color:red'>*</view>
-            请假类型：
-            <view style='color:grey' wx:if="{{items[index]?'':true}}">请选择</view>
-            <view>{{items[index]}}</view>
-        </view>
+<form bindsubmit="formSubmit">
+  <picker mode="selector" name='leavetype' range="{{items}}" bindchange="bindPickerChange" value="{{items[index]}}" >
+    <view class="section">
+      <view style='color:red'>*</view>
+      请假类型：
+      <view style='color:grey' wx:if="{{items[index]?'':true}}">请选择</view>
+      <view>{{items[index]}}</view>
+    </view>
+  </picker>
+
+  <view class='li1'>
+    <view style='color:red'>*</view>
+    <picker name="date1" mode="date" value='{{selectedProduceDate}}' start='{{startProduceDate}}' end='{{endProduceDate}}' filed='day' bindchange='dateChange'>
+      <view>开始日期：{{selectedProduceDate}}</view>
     </picker>
+  </view>
 
-    <view class='li1'>
-        <view style='color:red'>*</view>
-        <picker
-                name="date1"
-                mode="date"
-                value='{{selectedProduceDate}}'
-                start='{{startProduceDate}}'
-                end='{{endProduceDate}}'
-                filed='day'
-                bindchange='dateChange'>
-            <view>开始日期：{{selectedProduceDate}}</view>
-        </picker>
+  <picker name="time1" mode="selector" value='{{array[ind]}}' range='{{array}}' bindchange='timeChange'>
+    <view class='li2'>
+      <view style='color:red'>*</view>
+      开始时间：
+      <view style='color:grey' wx:if="{{array[ind]?'':true}}">请选择</view>
+      <view>{{array[ind]}}</view>
     </view>
+  </picker>
 
-    <picker
-            name="time1"
-            mode="selector"
-            value='{{array[ind]}}'
-            range='{{array}}'
-            bindchange='timeChange'>
-        <view class='li2'>
-            <view style='color:red'>*</view>
-            开始时间：
-            <view style='color:grey' wx:if="{{array[ind]?'':true}}">请选择</view>
-            <view>{{array[ind]}}</view>
-        </view>
+  <view class='li7'>
+    <view style='color:red'>*</view>
+    <picker name="date2" mode="date" value='{{selectedProduceDate2}}' start='{{startProduceDate}}' end='{{endProduceDate}}' filed='day' bindchange='dateChange2'>
+      <view>结束日期：{{selectedProduceDate2}}</view>
     </picker>
+  </view>
 
-    <view class='li7'>
-        <view style='color:red'>*</view>
-        <picker
-                name="date2"
-                mode="date"
-                value='{{selectedProduceDate2}}'
-                start='{{startProduceDate}}'
-                end='{{endProduceDate}}'
-                filed='day'
-                bindchange='dateChange2'>
-            <view>结束日期：{{selectedProduceDate2}}</view>
-        </picker>
+  <picker name="time2" mode="selector" value='{{array[ind2]}}' range='{{array}}' bindchange='endtimeChange'>
+    <view class='li3'>
+      <view style='color:red'>*</view>
+      结束时间：
+      <view style='color:grey' wx:if="{{array[ind2]?'':true}}">请选择</view>
+      <view>{{array[ind2]}}</view>
     </view>
+  </picker>
 
-    <picker
-            name="time2"
-            mode="selector"
-            value='{{array[ind2]}}'
-            range='{{array}}'
-            bindchange='endtimeChange'>
-        <view class='li3'>
-            <view style='color:red'>*</view>
-            结束时间：
-            <view style='color:grey' wx:if="{{array[ind2]?'':true}}">请选择</view>
-            <view>{{array[ind2]}}</view>
-        </view>
-    </picker>
+  <view class='li9'>
+    <view style='color:red'>*</view>
+    时长：
+    <input class='day' type='text' name='days' placeholder='请输入' />天
+    <view>
+      <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    </view>
+    <input class='day' type='text' name='hours' placeholder='请输入' />小时</view>
 
-    <view class='li9'>
-        <view style='color:red'>*</view>
-        时长：<input class='day' type='text' name='days' placeholder='请输入'/>天
-        <view><text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text></view>
-        <input class='day' type='text' name='hours' placeholder='请输入'/>小时</view>
+  <view class='li6'>
+    <text></text>
+  </view>
+  <view class='li4'>
+    <view style='color:red'>*</view>
+    请假事由：
+  </view>
+  <view class='li4-1'>
+    <textarea class='textarea' name="reason" bindinput='reasonInput' value='{{reason}}' placeholder='请填写请假事由'></textarea>
+  </view>
 
-    <view class='li6'>
-        <text></text>
+  <view>图片：\n</view>
+  <view class='li8'>
+    <view class='upimage' wx:for="{{imgs}}" wx:for-item="item" wx:key="code">
+      <image src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="preview" style="width:40px; height: 40px"></image>
+      <icon type='cancel' class='del' data-index="{{index}}" catchtap="deleteImg" size='20'></icon>
+      <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;</text>
     </view>
-    <view class='li4'>
-        <view style='color:red'>*</view>
-        请假事由：
-    </view>
-    <view class='li4-1'>
-        <textarea class='textarea' name="reason" bindinput='reasonInput' value='{{reason}}' placeholder='请填写请假事由'></textarea>
-    </view>
-
-    <view>图片：<view style='color:grey'>(最多可上传三张)\n\n</view>\n\n</view>
-    <view class='li8'>
-        <view class='upimage' wx:for="{{imgs}}" wx:for-item="item" wx:key="code">
-            <image src="{{item}}" data-index="{{index}}" mode="aspectFill" bindtap="preview" style="width:40px; height: 40px"></image>
-            <icon type='cancel' class='del' data-index="{{index}}" catchtap="deleteImg" size='20'></icon>
-            <text decode='{{true}}'>&nbsp;&nbsp;&nbsp;</text>
-        </view>
-        <image class='icon'  bindtap="addimage" wx:if="{{plusShow}}" src='./img.png'></image>
-    </view>
+    <image class='icon' bindtap="addimage" wx:if="{{plusShow}}" src='./img.png'></image>
+  </view>
 
 
-    <view class='li5'>
-        <view style='color:red'>*</view>
-        审批人：
-    </view>
-    <view wx:if='{{contect==""}}' class='icon' bindtap='addcontect'><image class='iconfont' src='./add.png'></image></view>
-    <view wx:else class='names' bindtap='addcontect'>{{contect}}</view>
-    <text>\n\n\n\n\n\n</text>
-    <view class="viewName">
-        <button  id="{{item.id}}"  formType="submit" class='btn' style="color:white;background-color:#6699FF">提交</button>
-    </view>
+  <view class='li5'>
+    <view style='color:red'>*</view>
+    审批人：
+  </view>
+  <view wx:if='{{contect==""}}' class='icon' bindtap='addcontect'>
+    <image class='iconfont' src='./add.png'></image>
+  </view>
+  <view wx:else class='names' bindtap='addcontect'>{{contect}}</view>
+  <text>\n\n\n\n\n\n</text>
+  <view class="viewName">
+    <button id="{{item.id}}" formType="submit" class='btn' style="color:white;background-color:#6699FF">提交</button>
+  </view>
 </form>

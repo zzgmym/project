@@ -40,15 +40,16 @@
     font-size:30rpx;
 }
 .nannview{
-    margin-top: 20rpx;
-    position:relative;
-    display:flex;
-    width:100%;
-    height:100rpx;
-    line-height:100rpx;
-    font-size:30rpx;
-    border-top:1px solid #ccc;
-    color:#222;
+ margin-left: 20rpx;
+ margin-right: 20rpx;
+ margin-top: 20rpx;
+ position:relative;
+ display:flex;
+ height:100rpx;
+ line-height:80rpx;
+ font-size:30rpx;
+ border-top:1px solid #ccc;
+ color:#222;
 
 }
 
@@ -63,15 +64,16 @@
 
 }
 
+
 .header{
     width:100%;
-    height:535rpx;
     background-color:#ffffff;
 }
 .tittleGrey{
     font-size:24rpx;
     color:grey;
     margin-right:20rpx;
+    margin-left: 20rpx;
 }
 .tittleNum{
     font-size:24rpx;
@@ -81,8 +83,8 @@
     width:16rpx;
     height:20rpx;
     position: absolute;
-    right: 20rpx;
-    top: 36rpx;
+    right: 0rpx;
+    top: 30rpx;
 }
 .centerview{
     margin-top:30rpx;
@@ -94,6 +96,7 @@
     background-color:#ffffff;
 }
 .centerList{
+    position: relative;
     display:flex;
     margin-left:20rpx;
     margin-right:20rpx;
@@ -114,14 +117,14 @@
     color:#EAC100;
 }
 .tittleRight{
-    margin-right:0rpx;
+    position: absolute;
+    right: 20rpx;
     font-size:24rpx;
     color:grey;
     line-height:100rpx;
+
 }
-.tittleone{
-    width:65%
-}
+
 .bottom-box{
     display: flex;
     justify-content: space-around;
@@ -144,10 +147,37 @@
     width: 200rpx;
     height: 200rpx;
 }
+.leaves{
+    position: absolute;
+    top: 50rpx;
+    right: 70rpx;
+    width: 120rpx;
+    height: 120rpx;
+}
 .leaveone{
     position: absolute;
     top: 0rpx;
     right: 0rpx;
     width: 200rpx;
     height: 200rpx;
+}
+.leaveones{
+    position: absolute;
+    top: 0rpx;
+    right: 70rpx;
+    
+}
+.img{
+    margin-top: 20rpx;
+    width: 100rpx;
+    height: 100rpx;
+}
+.tittleimg{
+    float: left;
+    margin-top: 15rpx;
+    margin-left: 20rpx;
+    font-size:24rpx;
+    color:grey;
+    margin-right:20rpx;
+    vertical-align: top;
 }

@@ -1,37 +1,39 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/login",
     "pages/index/index",
     "pages/info/info",
     "pages/logs/logs",
-    "pages/history/history",
-    "pages/person/person",
-    "pages/person/update",
-    "pages/check/check",
-    "pages/check/check2",
-    "pages/history/reset",
-    "pages/check/out",
     "pages/leave/leave",
     "pages/overtime/overtime",
     "pages/examination/examination",
     "pages/waitfor/waitfor",
     "pages/details/details",
     "pages/MailList/MailList",
-    "pages/contect/contect",
     "pages/opinion/opinion",
     "pages/checked/checked",
     "pages/launch/launch",
     "pages/started/started",
+    "pages/contect/contect",
     "pages/contect/contect2",
-    "pages/person/tel"
+    "pages/person/tel",
+    "pages/person/finish",
+    "pages/person/wait",
+    "pages/person/person",
+    "pages/person/update",
+    "pages/check/out",
+    "pages/index/shouquan"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#003366",
     "list": [
       {
         "pagePath": "pages/info/info",
@@ -51,13 +53,12 @@
         "iconPath": "images/user.png",
         "selectedIconPath": "images/user2.png"
       },
-    {
-      "pagePath": "pages/check/out",
-      "text": "导出",
-      "iconPath": "images/check.png",
-      "selectedIconPath": "images/check2.png"
-    }
+      {
+        "pagePath": "pages/check/out",
+        "text": "导出",
+        "iconPath": "images/check.png",
+        "selectedIconPath": "images/check2.png"
+      }
     ]
   }
- 
 }

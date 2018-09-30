@@ -10,18 +10,23 @@
 
 
 <view class='lxr' style='color:grey;font-size:18px'>联系人</view>
+
+<radio-group bindchange="radiogroupBindchange" >
   <view class="overList" wx:for='{{listData}}' wx:key='{{code}}'>
-    <label class="checkbox">
+    <label class="radio">
+        <view class='i2'>
       <view class="overLeft">
         <view class="overnames">
           <text class="name" >{{listname[index]}}</text>
         </view>
         <text class='name2'>{{item.uname}}</text>
-        <text decode='{{true}}'>&nbsp;&nbsp;</text>
-        <text class='tel'>{{item.telephone}}</text>
-      </view>
+        </view>
+        <radio value="{{item.telephone}}"  checked="{{item.checked}}"  hidden='radio'/>
+        <text class='tel' style='color:#aaa'>{{item.telephone}}</text>
+        </view>
     </label>
-  </view>
+</view>
+</radio-group>
 
 
 

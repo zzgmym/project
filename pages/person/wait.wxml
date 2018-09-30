@@ -1,10 +1,10 @@
-<navigator url="../started/started">
-    <view catchtap="gotoresult" id="{{item.id}}" class="overList" wx:for="{{listData}}" wx:key="{{code}}">
+    <view id="{{item.id}}" class="overList" wx:for="{{listData}}" wx:key="{{code}}" catchtap="gotoresult">
         <view class="overLeft">
             <view class="overnames">
-                <text   class="name">{{newname}}</text>
+                <text   class="name">{{listname}}</text>
             </view>
             <view class="overContent">
+            
                 <view wx:if="{{item.enddate != 'enddate'}}">
                     <view class="qingjia">
                         <text>{{item.uname}}的请假\n</text>
@@ -30,4 +30,3 @@
             </view>
         </view>
     </view>
-</navigator>

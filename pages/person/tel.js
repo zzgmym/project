@@ -1,4 +1,5 @@
 // pages/person/tel.js
+var conf = require('../../config.js')
 Page({
 
   /**
@@ -27,7 +28,7 @@ Page({
     })
     console.log("tel="+that.data.telNum)
     wx.request({
-      url: 'http://192.168.13.139:8989/MavenTest1/user/editTelephone',
+      url: conf.ip+'/MavenTest1/user/editTelephone',
       data:{
         username:wx.getStorageSync("userid"),
         telephone:that.data.telNum

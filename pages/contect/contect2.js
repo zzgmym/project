@@ -1,4 +1,5 @@
 // pages/contect/contect.js
+var conf = require('../../config.js')
 Page({
 
   /**
@@ -20,7 +21,7 @@ Page({
       title: '联系人'
     })
     wx.request({
-      url: 'http://192.168.13.139:8989/MavenTest1/user/listAuditor',
+      url: conf.ip+'/MavenTest1/user/listAuditor',
       data: {
         dept: wx.getStorageSync("dept")
       },
@@ -37,11 +38,23 @@ Page({
           listData: res.data,
           listname: name
         })
-        console.log("uname=" + that.data.listData.uname)
-        console.log("tel=" + that.data.listData.telephone)
       }
     })
   },
+
+  radiogroupBindchange:function(e){
+    console.log('拨号：' + e.detail.value)
+    wx.makePhoneCall({
+      phoneNumber: e.detail.value,
+      success:function(){
+        console.log('拨打成功！')
+      }
+    })
+  },
+  
+
+
+
   // search:function(key){
   //   var that =this;
   //   key:'listData'

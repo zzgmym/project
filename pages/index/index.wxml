@@ -13,7 +13,7 @@
    <view class="P1">
    <text class='zhanghao'>密 码：</text>
     <input class="input" type='password' name="password" placeholder="请输入密码"
-           bindinput="PWDInput" />
+           bindinput="PWDInput" adjust-position="true"/>
     <text decode='true'>&nbsp;&nbsp;&nbsp;&nbsp;</text>
     <image src='./pwd.png' class='icon' style="width:25px; height: 25px"></image>
    </view>

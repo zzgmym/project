@@ -6,12 +6,13 @@
 </view>
 
 <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">
+
     <swiper-item>
-        <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+        <scroll-view scroll-y class="scroll-view-y">
             <view catchtap="gotoresult"  id="{{item.id}}" class="overList" wx:for="{{listData}}" wx:key="{{code}}">
                 <view class="overLeft">
                     <view class="overnames">
-                        <text   class="name">{{item.uname}}</text>
+                        <text   class="name">{{item.newname}}</text>
                     </view>
                     <view class="overContent">
                         <view wx:if="{{item.enddate != 'enddate'}}">
@@ -43,13 +44,14 @@
             </view>
         </scroll-view>
     </swiper-item>
+    
     <swiper-item>
-        <scroll-view scroll-y class="scroll-view-y" scroll-top="{{scrollTop}}">
+        <scroll-view scroll-y class="scroll-view-y">
             <navigator url="../details/details">
             <view catchtap="gotore" id="{{item.id}}" class="overList" wx:for="{{allData}}" wx:key="{{code}}">
                 <view class="overLeft">
                     <view class="overnames">
-                        <text   class="name">{{item.uname}}</text>
+                        <text   class="name">{{item.newname}}</text>
                     </view>
                     <view class="overContent">
                         <view wx:if="{{item.enddate != 'enddate'}}">
@@ -80,14 +82,3 @@
         </scroll-view>
     </swiper-item>
 </swiper>
-<!--<view class="noshenpi">-->
-<!--<view class="viewbox">-->
-<!--<image class="shenpitype" src="../../images/shenpi.png" ></image>-->
-<!--<view class="overtimess">-->
-<!--<text>-->
-<!--没有已审批申请-->
-<!--</text>-->
-
-<!--</view>-->
-<!--</view>-->
-<!--</view>-->

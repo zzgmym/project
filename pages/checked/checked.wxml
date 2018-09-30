@@ -3,24 +3,28 @@
         <view class="contentBox">
             <view class="headerOne">
                 <view class="overnames">
-                    <text class="name">{{allData.uname}}</text>
+                    <text class="name">{{newname}}</text>
                 </view>
                 <view class='overTimeGroup'>
-                    <text class="nann">{{allData.uname}}的加班</text>
+                    <view wx:if="{{bbb=='加班'}}" class="nann">{{allData.uname}}的加班</view>
+                    <view wx:else>{{allData.uname}}的请假</view>
                     <text class="overtimewite">{{allData.status}}</text>
                 </view>
-                <view wx:if='{{allData.status==="通过审核"}}'>
+                <view wx:if='{{allData.status=="通过审核"}}'>
                     <image class="leave" src="../../images/pass.png" ></image>
                     <text class="leaveone">审批通过</text>
-
                 </view>
-                <view wx:else > <view>
+                <view wx:elif='{{allData.status=="审核不通过"}}'>
                     <image class="leave" src="../../images/no.png" ></image>
                     <text class="leaveone">审批拒绝</text>
                 </view>
+                <view wx:else>
+                    <image class="leaves" src="../../images/chexiao.png" ></image>
+                    <text class="leaveones">已撤销</text>
+                </view>
             </view>
             </view>
-            <view >
+            <view>
                 <text class="tittleGrey">审批编号</text>
                 <text class="tittleNum">{{allData.id}}</text>
             </view>
@@ -37,56 +41,43 @@
                 <text class="tittleNum">{{allData.endtime}}</text>
             </view>
             <view >
-                <text class="tittleGrey">时常</text>
+                <text class="tittleGrey">时长</text>
                 <text class="tittleNum">{{allData.totaltime}}</text>
             </view>
             <view >
-                <text class="tittleGrey">加班原因</text>
+                <text class="tittleGrey">{{bbb}}原因</text>
                 <text class="tittleNum">{{allData.reason}}</text>
             </view>
-
-            <view class="nannview">
-                <text> 查看TA的历史记录</text>
-                <image class="navvimg" src="../../images/next.png" ></image>
+            <view>
+                <view wx:if="{{allData.imgname}}">
+                    <text class="tittleimg">图片</text>
+                    <image class="img" src="{{imgs}}" bindtap='preview'></image>
+                </view>
+                <view wx:else></view>
             </view>
         </view>
-    </view>
     <view class="centerview">
         <view class="centerList">
             <view class="overnames">
-                <text class="name">{{allData.uname}}</text>
+                <text class="name">{{newname}}</text>
             </view>
             <view class="tittleone">
                 <text class="tittleLeft">{{allData.uname}}</text>
                 <text class="tittleLeft">发起审批</text>
             </view>
-            <view class="tittleRight">2018-08-28</view>
+            <view class="tittleRight">{{allData.submittime}}</view>
         </view>
     </view>
     <view class="centerviewtwo">
         <view class="centerList">
             <view class="overnames">
-                <text class="name">{{allData.uname}}</text>
+                <text class="name">{{newname}}</text>
             </view>
             <view class="tittleone">
                 <text class="tittleLeft">{{allData.uname}}</text>
                 <text class="titleTwo">{{allData.status}}</text>
             </view>
-            <view class="tittleRight">2018-08-28</view>
+            <view class="tittleRight">{{allData.checktime}}</view>
         </view>
     </view>
-
-
-    <!--<view class="bottom-box">-->
-        <!--<view  id="{{listData.id}}" calss="box-cont">-->
-              <!--<text class="mam">修改</text>-->
-         <!--</view>-->
-
-        <!--<view calss="box-cont">-->
-            <!--<text class="mam">撤销</text>-->
-        <!--</view>-->
-
-    <!--</view>-->
-
-
 </view>

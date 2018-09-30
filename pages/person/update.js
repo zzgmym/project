@@ -1,4 +1,5 @@
 // pages/A-centrality/A-mySetting/A-password/A-password.js
+var conf = require('../../config.js')
 Page({
 
   /**
@@ -29,7 +30,7 @@ Page({
       })
     } else {
       wx.request({
-        url: "http://192.168.13.139:8989/MavenTest1/login/editpassword",
+        url: conf.ip+"/MavenTest1/user/editpassword",
         method: 'POST',
         data: {
           userid:wx.getStorageSync("userid"),
@@ -54,7 +55,7 @@ Page({
               duration: 2000,
               success: function () {
                 setTimeout(function () {
-                  wx.navigateTo({
+                  wx.reLaunch({
                     url: '../index/index',
                   })
                 }, 2000)

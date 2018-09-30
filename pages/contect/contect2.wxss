@@ -48,7 +48,7 @@
 }
 .overList{
     padding:20rpx;
-    width:100%;
+    width:95%;
     height:75rpx;
     border-bottom:1px solid #ccc;
 }
@@ -65,6 +65,11 @@
 .overLeft{
     display:flex;
     align-items: baseline;
+}
+.i2{
+   display:flex;
+    align-items: baseline;
+    justify-content: space-between
 }
 .name{
     font-size:12px;

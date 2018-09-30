@@ -2,7 +2,15 @@
    <view class="choose">
    <view class="chooseview">
     <navigator url="../waitfor/waitfor">
-    <image class="leave" src="../../images/myexamination.png" ></image>
+    <image class="leave" src="../../images/myexamination.png" >
+
+        <view class="point" wx:if="{{listData!='0'}}">
+            <view class="point-text">
+                {{listData}}
+            </view>
+        </view>
+        <view wx:else></view>
+    </image>
     <text class="choosename">我审批的</text>
     </navigator>
     </view>
@@ -13,5 +21,4 @@
     </navigator>
      </view>
    </view>
-
 </view>

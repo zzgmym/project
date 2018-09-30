@@ -3,13 +3,13 @@ App({
   globalData: {
     token: wx.getStorageSync('token'),
   },
- 
-  onLoad: function (res) {
-
-  },
-  onShow: function () {
-
-
-  }
+  // onLaunch: function () {
+  //   wx.login({
+  //     success: function (res) {
+  //       wx.setStorageSync('usercode', res.code)
+  //       console.log("code===" + res.code)
+  //     }
+  //   })
+  // }
 
 })

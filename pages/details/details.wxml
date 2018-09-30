@@ -1,80 +1,101 @@
 <view class="box">
-<view class="header">
- <view class="contentBox">
-     <view class="headerOne">
-            <view class="overnames">
-            <text class="name">{{listData.uname}}</text>
-            </view>
-            <view class='overTimeGroup'>
-            <text class="nann">{{listData.uname}}的加班</text>
-            <text class="overtimewite">等待我待审批</text>
-            </view>
-     </view>
-     <view >
-     <text class="tittleGrey">审批编号</text>
-     <text class="tittleNum">{{listData.id}}</text>
-     </view>
-     <view >
-          <text class="tittleGrey">所在部门</text>
-          <text class="tittleNum">{{listData.dept}}</text>
-     </view>
-     <view >
-           <text class="tittleGrey">开始时间</text>
-           <text class="tittleNum">{{listData.starttime}}</text>
-     </view>
-     <view >
-           <text class="tittleGrey">结束时间</text>
-           <text class="tittleNum">{{listData.endtime}}</text>
-     </view>
-     <view >
-           <text class="tittleGrey">时常</text>
-           <text class="tittleNum">{{listData.totaltime}}</text>
-     </view>
-     <view >
-           <text class="tittleGrey">加班原因</text>
-           <text class="tittleNum">{{listData.reason}}</text>
-     </view>
-     <view class="nannview">
-     <text> 查看TA的历史记录</text>
-     <image class="navvimg" src="../../images/next.png" ></image>
-     </view>
- </view>
-</view>
- <view class="centerview">
-   <view class="centerList">
-     <view class="overnames">
-         <text class="name">{{listData.uname}}</text>
-     </view>
-     <view class="tittleone">
-     <text class="tittleLeft">{{listData.uname}}</text>
-     <text class="tittleLeft">发起审批</text>
-     </view>
-     <view class="tittleRight">{{listData.submittime}}</view>
-   </view>
- </view>
- <view class="centerviewtwo">
- <view class="centerList">
+  <view class="header">
+    <view class="contentBox">
+      <view class="headerOne">
+        <view class="overnames">
+          <text class="name">{{newname}}</text>
+        </view>
+        <view class='overTimeGroup'>
+          <view wx:if="{{bbb=='加班'}}" class="nann">{{listData.uname}}的加班</view>
+          <view wx:else>{{listData.uname}}的请假</view>
+          <text class="overtimewite">等待{{listData.auditor}}待审批</text>
+        </view>
+      </view>
+      <view>
+        <text class="tittleGrey">审批编号</text>
+        <text class="tittleNum">{{listData.id}}</text>
+      </view>
+      <view>
+        <text class="tittleGrey">所在部门</text>
+        <text class="tittleNum">{{listData.dept}}</text>
+      </view>
+      <view>
+        <text class="tittleGrey">开始时间</text>
+        <text class="tittleNum">{{listData.starttime}}</text>
+      </view>
+      <view>
+        <text class="tittleGrey">结束时间</text>
+        <text class="tittleNum">{{listData.endtime}}</text>
+      </view>
+      <view>
+        <text class="tittleGrey">时长</text>
+        <text class="tittleNum">{{listData.totaltime}}</text>
+      </view>
+      <view>
+        <text class="tittleGrey">{{bbb}}原因</text>
+        <text class="tittleNum">{{listData.reason}}</text>
+      </view>
+      <view>
+        <view wx:if="{{listData.imgname}}">
+          <text class="tittleimg">图片</text>
+          <image class="img" src="{{imgs}}" bindtap='preview'></image>
+        </view>
+        <view wx:else></view>
+      </view>
+      <navigator url="../launch/launch">
+        <view class="nannview">
+          <text> 查看TA的历史记录</text>
+          <image class="navvimg" src="../../images/next.png" ></image>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="centerview">
+    <view class="centerList">
       <view class="overnames">
-          <text class="name">{{listData.uname}}</text>
+        <text class="name">{{newname}}</text>
       </view>
       <view class="tittleone">
-      <text class="tittleLeft">{{listData.uname}}</text>
-      <text class="titleTwo">审批中</text>
+        <text class="tittleLeft">{{listData.uname}}</text>
+        <text class="tittleLeft">发起审批</text>
       </view>
-      <view class="tittleRight">2018-08-28</view>
+      <view class="tittleRight">{{listData.submittime}}</view>
+    </view>
   </view>
-  </view>
+  <view class="centerviewtwo">
+    <view class="centerList">
+      <view class="overnames">
+        <text class="name">{{auditor}}</text>
+      </view>
+      <view class="tittleone">
+        <text class="tittleLeft">{{listData.auditor}}</text>
+        <text class="titleTwo">审批中</text>
+      </view>
+      <view class="tittleRight">{{time}}</view>
+    </view>
+    <view wx:if="{{showModal}}" class="modalDlg">
+      <text class='box2'>你确定要撤销申请吗</text>
+      <view class='box1'>
+        <view class="leftbox" bindtap="go">取消</view>
+        <view class="rightbox" bindtap="chexiao">确定</view>
+      </view>
+    </view>
     <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  </view>
+  <view wx:if="{{aaa=='1'}}" class="bottom-box">
+    <view data-status="同意" catchtap="gotore" id="{{listData.id}}" calss="box-cont">
+      <text class="mam">同意</text>
+    </view>
+    <view data-status="拒绝" catchtap="gotore" id="{{listData.id}}" calss="box-cont">
+      <text class="mam">拒绝</text>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="bottom-box">
+      <view data-status="撤销" calss="box-cont">
+        <text bindtap="submit" class="mam">撤销</text>
+      </view>
+    </view>
+  </view>
 
-    <view class="modalDlg" wx:if="{{showModal}}">
-        <text class='box2'>你确定要撤销申请吗</text>
-        <view class='box1'>
-            <view class="leftbox" bindtap="go">取消</view>
-            <view class="rightbox">确定</view>
-        </view>
-    </view>
-    <view  data-status="撤销"  calss="box-cont">
-        <button bindtap="submit" class="mam">撤消</button>
-    </view>
 </view>
-

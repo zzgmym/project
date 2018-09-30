@@ -28,7 +28,7 @@
     <view class="user-info" bindtap='navigat2'>
         修改手机号 <image src='./jiantou.png' style="width:20px; height: 20px"></image>
     </view>
-    <view><text>\n\n</text></view>
+    <view><text>\n</text></view>
     <text class='btn' bindtap="clear">退出登录</text>
 
 </view>
