@@ -55,7 +55,7 @@ Page({
             wx.setStorageSync('email', res.data.user.email)
             wx.setStorageSync('tel', res.data.user.telephone)
             console.log('openid2=' + res.data.user.openid2)
-            if (res.data.user.openid2 == '' || res.data.user.openid2 ==null){
+            if (!res.data.user.openid2){
             wx.navigateTo({
               url: './shouquan',        
             })

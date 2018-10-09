@@ -5,6 +5,9 @@ Page({
 
     },
     onShow: function () {
+      wx.setNavigationBarTitle({
+        title: '工作审批',
+      })
         var that = this;
         wx.request({
             url: conf.ip+'/MavenTest1/list/findUncheckCount',

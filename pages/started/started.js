@@ -14,6 +14,10 @@ Page({
     bbb: ''
   },
   onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: '详情',
+    })
+
     var img = conf.ip + '/MavenTest1/images/';
     var that = this;
     var ta = options.id;

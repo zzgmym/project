@@ -17,6 +17,9 @@ Page({
    */
   //查询该审核人未审核的申请，按日期倒序排列
   onShow: function(options) {
+    wx.setNavigationBarTitle({
+      title: '工作审批',
+    })
     var that = this;
     wx.request({
       url: conf.ip + '/MavenTest1/list/listUncheck',

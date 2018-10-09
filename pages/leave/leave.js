@@ -207,22 +207,39 @@ Page({
         header: {
           "Content-Type": "application/json; charset=utf8"
         },
-        success: function(res) {
-          console.log(res, 'uuuuu')
-          console.log("result=" + res.data.status)
+        success: function (res) {
           if (res.data.status != '-1') {
-            wx.showToast({
-              title: res.data.status == '1' ? '提交成功' : '提交失败',
-              icon: 'none',
-              duration: 2000,
-            })
+
             if (res.data.status == '1') {
-              setTimeout(function(event) {
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 2000,
+              })
+              setTimeout(function (event) {
                 var id = res.data.id;
                 wx.navigateTo({
-                  url: '../details/details?id=' + id+'&aaa=0'
+                  url: '../details/details?id=' + id + '&aaa=0',
                 })
               }, 1000)
+            } else if (res.data.status == '0') {
+              wx.showToast({
+                title: '提交失败',
+                icon: 'none',
+                duration: 2000,
+              })
+            } else if (s.status == '2'){
+              wx.showToast({
+                title: '您暂时未关注公众号,请关注公众号以便接收信息',
+                icon: 'none',
+                duration: 3000
+              })
+              setTimeout(function (event) {
+                var id = res.data.id;
+                wx.navigateTo({
+                  url: '../details/details?id=' + id + '&aaa=0',
+                })
+              },3000)
             }
           } else {
             wx.showToast({
@@ -259,25 +276,41 @@ Page({
           console.log(res, 'uuuuu')
           var s = (JSON.parse(res.data))
           console.log("result=" + s.status)
-          if (s.status == '1') {
-            wx.showToast({
-              title: '提交成功',
-              icon: 'none',
-              duration: 2000,
-            })
-            setTimeout(function(event) {
-              var id = s.id;
-              wx.navigateTo({
-                url: '../details/details?id=' + id + '&aaa=0'
+
+          if (s.status != '-1') {
+
+            if (s.status == '1') {
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 2000,
               })
-            }, 1000)
-          } else if (s.status == '0') {
-            wx.showToast({
-              title: '提交失败',
-              icon: 'none',
-              duration: 2000,
-            })
-          } else if (s.status == '-1') {
+              setTimeout(function (event) {
+                var id = s.id;
+                wx.navigateTo({
+                  url: '../details/details?id=' + id + '&aaa=0',
+                })
+              }, 1000)
+            } else if (s.status == '0') {
+              wx.showToast({
+                title: '提交失败',
+                icon: 'none',
+                duration: 2000,
+              })
+            } else if (s.status == '2'){
+              wx.showToast({
+                title: '您暂时未关注公众号,请关注公众号以便接收信息',
+                icon: 'none',
+                duration: 3000
+              })
+              setTimeout(function (event) {
+                var id = res.data.id;
+                wx.navigateTo({
+                  url: '../details/details?id=' + id + '&aaa=0',
+                })
+              }, 3000)
+            }
+          } else {
             wx.showToast({
               title: '您已提交，请勿重复提交！',
               icon: 'none',

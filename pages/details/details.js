@@ -17,6 +17,10 @@ Page({
 
   },
   onLoad: function(options) {
+    wx.setNavigationBarTitle({
+      title: '详情',
+    })
+
     var img = conf.ip+'/MavenTest1/images/'
     var that = this;
     var ta = options.id;
@@ -33,6 +37,7 @@ Page({
       },
 
       success: function(res) {
+        console.log(res.data)
         var ssss = res.data.timeDifference;
         if (res.data.status == '1') {
           that.setData({
